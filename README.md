@@ -2,7 +2,7 @@
 
 > **"Wisdom meets Science"** — Bridging traditional Ayurvedic knowledge with modern nutritional science through AI-powered clinical intelligence.
 
-![AyurDiet Pro](ayurdiet.png)
+![AyurDiet Pro](Screenshots/ayurdiet.png)
 
 ---
 
@@ -131,25 +131,25 @@ Each dish in the library carries rich metadata: seasonal availability (Varsha, G
 
 | Clinical Dashboard | Patient Directory |
 |---|---|
-| ![Dashboard](ayurdiet.png) | ![Patients](ayurdiet2.png) |
+| ![Dashboard](Screenshots/ayurdiet.png) | ![Patients](Screenshots/ayurdiet2.png) |
 
 | Clinical Analysis Input | AI Clinical Insight Output |
 |---|---|
-| ![Analysis](ayurdiet3.png) | ![Insight](ayurdiet4.png) |
+| ![Analysis](Screenshots/ayurdiet3.png) | ![Insight](Screenshots/ayurdiet4.png) |
 
 | Weekly Regimen Builder | Dish Detail Modal |
 |---|---|
-| ![Builder](ayurdiet5.png) | ![Dish](ayurdiet6.png) |
+| ![Builder](Screenshots/ayurdiet5.png) | ![Dish](Screenshots/ayurdiet6.png) |
 
 | Clinic Analytics |
 |---|
-| ![Analytics](ayurdiet7.png) |
+| ![Analytics](Screenshots/ayurdiet7.png) |
 
 ### Patient Portal
 
 | Health Center | Weekly Regimen View |
 |---|---|
-| ![Health Center](ayurdiet8.png) | ![Regimen](ayurdiet9.png) |
+| ![Health Center](Screenshots/ayurdiet8.png) | ![Regimen](Screenshots/ayurdiet9.png) |
 
 ---
 
