@@ -2,7 +2,7 @@
 
 > **"Wisdom meets Science"** — Bridging traditional Ayurvedic knowledge with modern nutritional science through AI-powered clinical intelligence.
 
-![AyurDiet Pro](<img width="1909" height="914" alt="ayurdiet" src="https://github.com/user-attachments/assets/a34d550f-b7b3-4fb4-a8b5-a0010a30a3ae" />)
+![AyurDiet Pro](ayurdiet.png)
 
 ---
 
@@ -131,25 +131,25 @@ Each dish in the library carries rich metadata: seasonal availability (Varsha, G
 
 | Clinical Dashboard | Patient Directory |
 |---|---|
-| ![Dashboard](<img width="1909" height="914" alt="ayurdiet" src="https://github.com/user-attachments/assets/bbac9989-d8db-4836-875e-0825180eb131" />) | ![Patients](<img width="1904" height="906" alt="ayurdiet2" src="https://github.com/user-attachments/assets/2945a2ed-2b43-4536-9b78-f694c34e3353" />) |
+| ![Dashboard](ayurdiet.png) | ![Patients](ayurdiet2.png) |
 
 | Clinical Analysis Input | AI Clinical Insight Output |
 |---|---|
-| ![Analysis](<img width="865" height="720" alt="ayurdiet3" src="https://github.com/user-attachments/assets/6255062b-e5ec-4cf1-ab8e-9745ee0ec312" />) | ![Insight](<img width="855" height="711" alt="ayurdiet4" src="https://github.com/user-attachments/assets/7ba0799a-69a6-4004-a221-41d036737f79" />) |
+| ![Analysis](ayurdiet3.png) | ![Insight](ayurdiet4.png) |
 
 | Weekly Regimen Builder | Dish Detail Modal |
 |---|---|
-| ![Builder](<img width="1893" height="907" alt="ayurdiet5" src="https://github.com/user-attachments/assets/129a0c99-9725-46ff-a8b0-6a1234fdf29d" />) | ![Dish](<img width="1910" height="912" alt="ayurdiet6" src="https://github.com/user-attachments/assets/beab36f5-e666-41c6-b453-d1ec5542ad05" />) |
+| ![Builder](ayurdiet5.png) | ![Dish](ayurdiet6.png) |
 
 | Clinic Analytics |
 |---|
-| ![Analytics](<img width="1889" height="911" alt="ayurdiet7" src="https://github.com/user-attachments/assets/70c214cb-5b01-425f-aa9b-09e1509a49d0" />) |
+| ![Analytics](ayurdiet7.png) |
 
 ### Patient Portal
 
 | Health Center | Weekly Regimen View |
 |---|---|
-| ![Health Center](<img width="1897" height="907" alt="ayurdiet8" src="https://github.com/user-attachments/assets/e05696ab-3cac-41f4-b526-f05f72d9fe27" />) | ![Regimen](<img width="1914" height="909" alt="ayurdiet9" src="https://github.com/user-attachments/assets/8ff18335-0ae7-4080-a659-8bcdffe8c100" />) |
+| ![Health Center](ayurdiet8.png) | ![Regimen](ayurdiet9.png) |
 
 ---
 
