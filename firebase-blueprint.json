@@ -1,0 +1,154 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the system (Dietitian or Patient)",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["dietitian", "patient"] },
+        "photoURL": { "type": "string" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Patient": {
+      "title": "Patient",
+      "description": "A patient registered in the system",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "age": { "type": "number" },
+        "gender": { "type": "string", "enum": ["Male", "Female", "Other"] },
+        "prakriti": { "type": "string", "enum": ["Vata", "Pitta", "Kapha"] },
+        "vikriti": { "type": "string", "enum": ["Vata", "Pitta", "Kapha"] },
+        "currentWeight": { "type": "number" },
+        "targetWeight": { "type": "number" },
+        "status": { "type": "string", "enum": ["Active", "Inactive"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "dietitianId": { "type": "string" }
+      },
+      "required": ["name", "age", "gender", "prakriti", "dietitianId"]
+    },
+    "ClinicalAnalysis": {
+      "title": "Clinical Analysis",
+      "description": "Ayurvedic assessment for a patient",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "primaryPrakriti": { "type": "string" },
+        "symptoms": { "type": "string" },
+        "agni": { "type": "string" },
+        "koshtha": { "type": "string" },
+        "insight": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId", "primaryPrakriti"]
+    },
+    "Dish": {
+      "title": "Dish",
+      "description": "A meal or dish with Ayurvedic properties",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["Breakfast", "Lunch", "Dinner", "Snack"] },
+        "suitability": { "type": "array", "items": { "type": "string" } },
+        "calories": { "type": "number" },
+        "protein": { "type": "number" },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "amount": { "type": "string" },
+              "virya": { "type": "string" },
+              "vipaka": { "type": "string" },
+              "rasa": { "type": "string" },
+              "doshaEffect": { "type": "object" }
+            }
+          }
+        }
+      },
+      "required": ["name", "type"]
+    },
+    "DietPlan": {
+      "title": "Diet Plan",
+      "description": "Weekly dietary schedule for a patient",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "weekOf": { "type": "string" },
+        "schedule": { "type": "object" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId", "weekOf", "schedule"]
+    },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "A scheduled consultation with a patient",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "dietitianId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "time": { "type": "string" },
+        "type": { "type": "string", "enum": ["INITIAL", "REVIEW"] },
+        "status": { "type": "string", "enum": ["SCHEDULED", "COMPLETED", "CANCELLED"] }
+      },
+      "required": ["patientId", "dietitianId", "date", "time", "type"]
+    },
+    "MealLog": {
+      "title": "Meal Log",
+      "description": "Tracking if a patient took their scheduled meal",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "slotId": { "type": "string" },
+        "dishId": { "type": "string" },
+        "dishName": { "type": "string" },
+        "calories": { "type": "number" },
+        "protein": { "type": "number" },
+        "carbs": { "type": "number" },
+        "fat": { "type": "number" },
+        "taken": { "type": "boolean" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["patientId", "date", "slotId", "taken"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/patients/{patientId}": {
+      "schema": "Patient",
+      "description": "Patient records"
+    },
+    "/analyses/{analysisId}": {
+      "schema": "ClinicalAnalysis",
+      "description": "Clinical assessments"
+    },
+    "/dishes/{dishId}": {
+      "schema": "Dish",
+      "description": "Dish library"
+    },
+    "/dietPlans/{planId}": {
+      "schema": "DietPlan",
+      "description": "Weekly diet plans"
+    },
+    "/appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Scheduled consultations"
+    },
+    "/mealLogs/{logId}": {
+      "schema": "MealLog",
+      "description": "Patient meal tracking"
+    }
+  }
+}

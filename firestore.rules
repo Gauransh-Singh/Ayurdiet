@@ -1,0 +1,98 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    // Collection: users
+    // Fields: uid, email, displayName, role, photoURL
+    //
+    // Collection: patients
+    // Fields: id, name, age, gender, prakriti, vikriti, currentWeight, targetWeight, status, createdAt, dietitianId
+    //
+    // Collection: analyses
+    // Fields: patientId, primaryPrakriti, symptoms, agni, koshtha, insight, createdAt
+    //
+    // Collection: dishes
+    // Fields: name, mealType, suitableDosha, season, ingredients, calories, protein
+    //
+    // Collection: ingredients
+    // Fields: id, name, category, unit, calories, protein, carbs, fat, fiber, iron, calcium, rasa, virya, vipaka, digestibility, doshaEffect
+    //
+    // Collection: dietPlans
+    // Fields: patientId, weekOf, schedule, createdAt
+    //
+    // Collection: appointments
+    // Fields: patientId, patientName, dietitianId, date, time, type, status
+    // ===============================================================
+
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isDemoMode() {
+      return true; // Set to true for prototype/demo phase
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isDietitian() {
+      return isDemoMode() || (isAuthenticated() && exists(/databases/$(database)/documents/users/$(request.auth.uid)) && getUserData().role == 'dietitian');
+    }
+
+    function isPatient() {
+      return isDemoMode() || (isAuthenticated() && exists(/databases/$(database)/documents/users/$(request.auth.uid)) && getUserData().role == 'patient');
+    }
+
+    // User Rules
+    match /users/{uid} {
+      allow read, write: if isDemoMode() || isOwner(uid);
+    }
+
+    // Patient Rules
+    match /patients/{patientId} {
+      allow read: if isDemoMode() || isAuthenticated();
+      allow create, update, delete: if isDemoMode() || isDietitian();
+    }
+
+    // Analysis Rules
+    match /analyses/{analysisId} {
+      allow read: if isDemoMode() || isAuthenticated();
+      allow create, update: if isDemoMode() || isDietitian();
+    }
+
+    // Ingredient Rules
+    match /ingredients/{ingredientId} {
+      allow read, write: if isDemoMode() || isDietitian();
+    }
+
+    // Dish Rules
+    match /dishes/{dishId} {
+      allow read, write: if isDemoMode() || isDietitian();
+    }
+
+    // Diet Plan Rules
+    match /dietPlans/{planId} {
+      allow read: if isDemoMode() || isAuthenticated();
+      allow create, update: if isDemoMode() || isDietitian();
+    }
+    
+    // Appointment Rules
+    match /appointments/{appointmentId} {
+      allow read: if isDemoMode() || isAuthenticated();
+      allow create, update, delete: if isDemoMode() || isDietitian();
+    }
+
+    // Meal Log Rules
+    match /mealLogs/{logId} {
+      allow read, write: if isDemoMode() || isAuthenticated();
+    }
+  }
+}
