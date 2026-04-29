@@ -243,7 +243,7 @@ AyurDiet Pro implements **professional-grade Firestore Security Rules** to prote
 **Gauransh Singh** — BCA (AI/ML) · Galgotias University · Greater Noida
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-gauransh--singh-blue)](https://linkedin.com/in/gauransh-singh-211586294)
-[![Portfolio](https://img.shields.io/badge/Portfolio-gauransh--singh.github.io-green)](https://gauranshsinghbarca.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-gauransh--singh.io-green)](https://gauranshsinghbarca.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-gauransh--singh-black)](https://github.com/gauransh-singh)
 
 ---
