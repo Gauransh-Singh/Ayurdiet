@@ -1,6 +1,12 @@
 # 🌿 AyurDiet Pro
 
 > **"Wisdom meets Science"** — Bridging traditional Ayurvedic knowledge with modern nutritional science through AI-powered clinical intelligence.
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-a78bfa?style=for-the-badge&logoColor=white)](https://ayurdiet.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gauransh-singh/ayurdiet-pro)
+
+</div>
 
 ![AyurDiet Pro](Screenshots/ayurdiet.png)
 
@@ -243,7 +249,7 @@ AyurDiet Pro implements **professional-grade Firestore Security Rules** to prote
 **Gauransh Singh** — BCA (AI/ML) · Galgotias University · Greater Noida
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-gauransh--singh-blue)](https://linkedin.com/in/gauransh-singh-211586294)
-[![Portfolio](https://img.shields.io/badge/Portfolio-gauransh--singh.io-green)](https://gauranshsinghbarca.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-gauransh--singh.io-green)](https://gauransh-singh.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-gauransh--singh-black)](https://github.com/gauransh-singh)
 
 ---
